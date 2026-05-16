@@ -7,26 +7,26 @@ const authContext = createContext();
 export const AuthProvider = ({children}) => {
 
     const [session , setSession] = useState();
-    const {data:profileData , isPending:getProfileLoading} = useUserData(
-        {   
-            userIdFromSession : session?.user?.id ,
-            userEmail : session?.user?.email
-        }
-    );
-    const [getSessionLoading , setGetSessionLoading] = useState(true);
-    const getSession = async () => {
-        try {
-            supabase.auth.getSession().then(({data : {session}}) => {
-                if(session) {
-                    setSession(session)
-                }
-            })
-        }catch (error) {
-            toast.error(error)
-        }finally {
-            setGetSessionLoading(false);
-        }
-    }
+    // const {data:profileData , isPending:getProfileLoading} = useUserData(
+    //     {   
+    //         userIdFromSession : session?.user?.id ,
+    //         userEmail : session?.user?.email
+    //     }
+    // );
+    // const [getSessionLoading , setGetSessionLoading] = useState(true);
+    // const getSession = async () => {
+    //     try {
+    //         supabase.auth.getSession().then(({data : {session}}) => {
+    //             if(session) {
+    //                 setSession(session)
+    //             }
+    //         })
+    //     }catch (error) {
+    //         toast.error(error)
+    //     }finally {
+    //         setGetSessionLoading(false);
+    //     }
+    // }
     // useEffect(() => {
     //     getSession();
     //     const {data:authListener} = supabase.auth.onAuthStateChange((_e , session) => {
@@ -38,10 +38,10 @@ export const AuthProvider = ({children}) => {
     return (
         <authContext.Provider value={
             {
-                getSessionLoading,
-                session,
-                getProfileLoading,
-                profile:profileData,
+                getSessionLoading : false,
+                session : null,
+                getProfileLoading : false,
+                profile: {},
             }
             }>
             {children}
