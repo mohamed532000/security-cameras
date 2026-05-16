@@ -109,7 +109,7 @@ async function Footer({locale}) {
                 </FooterColumn>
             </div>
             <div className='container border-t-[.3px] border-slate-200 dark:border-slate-200 flex justify-center items-center py-5'>
-                <p>© {currentYear} <span className='text-active-text-primary'>Sochyalizer</span>. {globalT("All rights reserved")}.</p>
+                <p>© {currentYear} <span className='text-active-text-primary'>Mohamed Ezat</span>. {globalT("All rights reserved")}.</p>
             </div>
         </footer>
     )
