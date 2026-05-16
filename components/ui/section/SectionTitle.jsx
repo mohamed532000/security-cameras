@@ -11,7 +11,8 @@ function SectionTitle({title , subText}) {
       <div className={`relative w-fit after:absolute after:w-[50px] after:h-[2px] after:bg-active-text-primary after:inset-y-[100%] after:rounded-3xl after:transition-all after:duration-500 ${currentLocal !== "ar" ? "after:inset-x-[50%] after:-translate-x-[50%]" : "after:inset-x-[50%] after:translate-x-[50%]"} after:mb-2`}>
         <SplitText
         text={title}
-        className="text-section-title-color transition-all duration-300 font-bold text-[clamp(2rem,5vw,3rem)] text-center dark:text-stone-50 dark:[text-shadow:0px_0px_6px_#c0db66] px-2.5"
+        // className="text-section-title-color transition-all duration-300 font-bold text-[clamp(2rem,5vw,3rem)] text-center dark:text-stone-50 dark:[text-shadow:0px_0px_6px_#c0db66] px-2.5"
+        className="text-blue-600 transition-all duration-300 font-bold text-[clamp(2rem,5vw,3rem)] text-center dark:text-blue-200 dark:[text-shadow:0px_0px_6px_#60a5fa] px-2.5"
         delay={100}
         duration={0.6}
         ease="power3.out"

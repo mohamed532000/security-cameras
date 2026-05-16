@@ -99,7 +99,18 @@
         "Something went wrong" :"Something went wrong",
         "Try again" : "Try again",
         "What do you want" : "What do you want",
-        "Apply" : "Apply"
+        "Apply" : "Apply",
+        "Create new address" : "Create new address",
+        "Governorate" : "Governorate",
+        "City" : "City",
+        "Tax" : "Tax",
+        "Encrypted checkout experience" : "Encrypted checkout experience",
+        "Menu" : "Menu",
+        "videoSectionTitle" : "Security That Thinks Ahead",
+        "videoSectionText" : "Press play to see how our built-in AI instantly distinguishes between a passing animal and a real threat. Smart security, simplified" ,
+        "Saudi Arabia" : "Saudi Arabia",
+        "Dammam" : "Dammam",
+        "AL Dabab" : "AL Dabab"
     },
     "home" : {
         "title" : "title",
@@ -110,7 +121,13 @@
         "about" : "about",
         "contact" : "contact",
         "Shop Now" : "Shop Now",
-        "/" : "home"
+        "/" : "home",
+        "24/7 Smart Surveillance": "24/7 Smart Surveillance",
+        "Monitor your home or business in real time with high definition security cameras and intelligent motion detection": "Monitor your home or business in real time with high definition security cameras and intelligent motion detection",
+        "Security You Can Trust": "Security You Can Trust",
+        "Protect what matters most using weather resistant cameras with night vision remote access and instant alerts": "Protect what matters most using weather resistant cameras with night vision remote access and instant alerts",
+        "Stay Connected Anywhere": "Stay Connected Anywhere",
+        "Access live camera feeds from your phone anytime anywhere with secure cloud connected surveillance systems": "Access live camera feeds from your phone anytime anywhere with secure cloud connected surveillance systems"
     },
     "contactPage" : {
         "contactDescription" : "Here you can contact us and send messages.",
@@ -187,9 +204,16 @@
         "wishlistPageDescription" : "All the things you love, waiting just for you",
         "OFF" : "OFF",
         "Checkout" : "Checkout",
+        "checkout" : "checkout",
         "Estimate shipping" : "Estimate shipping",
         "Choose governorate" : "Choose governorate",
         "Choose city" : "Choose city",
-        "Available shipping method: Express Courier" : "Available shipping method: Express Courier"
+        "Available shipping method: Express Courier" : "Available shipping method: Express Courier",
+        "Complete" : "Complete",
+        "Total amount" : "Total amount",
+        "Coupon discount" : "Coupon discount",
+        "QYT" : "QYT",
+        "Sub total" : "Sub total",
+        "View product" : "View product"
     }
 }

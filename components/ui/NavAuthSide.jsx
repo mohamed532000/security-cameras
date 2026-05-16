@@ -12,11 +12,11 @@ import SpinLoading from './SpinLoading';
 // import { Link } from '@/i18n/navigation';
 
 function NavAuthSide() {
-    const [isMounted , setIsMounted] = useState(false)
-    const {session:sessionData , getSessionLoading} = UserAuth();
-    useEffect(() => setIsMounted(true) , [])
-    if(!isMounted) return <SpinLoading/>
-    if(!sessionData && !getSessionLoading) return <RegisterBtn/>
+    // const [isMounted , setIsMounted] = useState(false)
+    // const {session:sessionData , getSessionLoading} = UserAuth();
+    // useEffect(() => setIsMounted(true) , [])
+    // if(!isMounted) return <SpinLoading/>
+    // if(!sessionData && !getSessionLoading) return <RegisterBtn/>
     return <UserDropdown/>
 }
 

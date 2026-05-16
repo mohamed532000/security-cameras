@@ -17,15 +17,16 @@ import { useSignInAnonimously } from "@/services/auth/useSignInAnonymously";
 import NavSearchForm from "@/app/forms/nav-search/NavSearchForm";
 import { useAppSettings } from "@/services/settings/useAppSettings";
 import { Link } from "@/i18n/navigation";
-import { FaWhatsapp } from "react-icons/fa";
-import { MdOutlineAlternateEmail } from "react-icons/md";
-
-gsap.registerPlugin(ScrollTrigger)
+import sonyPanner from "../app/media/images/backgrounds/sony-banner.webp"
+import HandleTranslate from "@/helper/HandleTranslate";
+import { IoListOutline } from "react-icons/io5";
+gsap.registerPlugin(ScrollTrigger);
 export default function Navbar() {
     const {mutate:signInAsGuest} = useSignInAnonimously();
 
     const t = useTranslations("home");
     const globalT = useTranslations("global");
+    const shoppingT = useTranslations("shopping");
     const [activeMobileNav , setActiveMobileNav] = useState(false);
     const {data:settingsData} = useAppSettings()
     const navRef = useRef(null);
@@ -38,7 +39,8 @@ export default function Navbar() {
         `/${currentLocale}/${encodeURI(globalT("auth"))}/${encodeURI(t("login"))}`,
         `/${currentLocale}/${encodeURI(globalT("user"))}/${encodeURI(globalT("profile"))}`,
         `/${currentLocale}/${encodeURI(globalT("auth"))}/${encodeURI(globalT("insert-mail-to-reset-password"))}`,
-        `/${currentLocale}/${encodeURI(globalT("auth"))}/${encodeURI(globalT("reset-password"))}`
+        `/${currentLocale}/${encodeURI(globalT("auth"))}/${encodeURI(globalT("reset-password"))}`,
+        `/${currentLocale}/${encodeURI(globalT("user"))}/${encodeURI(shoppingT("checkout"))}`
     ]);
     const noNav = removeNavWhen.has(pathname);
     useEffect(() => {
@@ -50,19 +52,19 @@ export default function Navbar() {
                         "bg-background",
                         "shadow-[2px_3px_10px_#c4c4c4]",
                         "dark:shadow-[2px_3px_10px_black]",);
-                    navLinksParentRef.current.classList.remove("border-b");
-                    firstNavRef.current.classList.remove("md:h-[70px]");
-                    firstNavRef.current.classList.remove("h-[85px]");
-                    firstNavRef.current.classList.add("h-0");
+                    navLinksParentRef?.current?.classList.remove("border-b");
+                    firstNavRef?.current?.classList.remove("md:h-[20px]");
+                    firstNavRef?.current?.classList.remove("h-[20px]");
+                    firstNavRef?.current?.classList.add("h-0");
                 }else {
                     navRef?.current?.classList.remove(
                         "bg-background",
                         "shadow-[2px_3px_10px_#c4c4c4]",
                         "dark:shadow-[2px_3px_10px_black]",);
-                    navLinksParentRef.current.classList.add("border-b");
-                    firstNavRef.current.classList.remove("h-0");
-                    firstNavRef.current.classList.add("md:h-[70px]");
-                    firstNavRef.current.classList.add("h-[85px]");
+                    navLinksParentRef?.current?.classList.add("border-b");
+                    firstNavRef?.current?.classList.remove("h-0");
+                    firstNavRef?.current?.classList.add("md:h-[20px]");
+                    firstNavRef?.current?.classList.add("h-[20px]");
                 }
             }
         });
@@ -83,7 +85,13 @@ export default function Navbar() {
         <>
             {/* <header ref={navRef} className={`fixed inset-x-0 inset-y-0 h-fit z-40 ${isScrolling ? "bg-background  shadow-[2px_3px_10px_#c4c4c4] dark:shadow-[2px_3px_10px_black]" : ""} transition-all duration-300`}> */}
             <header ref={navRef} className={`navbar fixed inset-x-0 inset-y-0 h-fit z-40 transition-all duration-300`}>
-                <div className="relative w-full bg-gradient-to-r from-[#3c7165] to-[#031637] overflow-hidden transition-all duration-300" ref={firstNavRef}>
+                <div 
+                    className={`relative w-full overflow-hidden h-[20px] transition-all duration-300 bg-no-repeat bg-cover bg-center`}
+                    style={{ backgroundImage: `url(${sonyPanner.src})` }}
+                    ref={firstNavRef}
+                >
+                </div>
+                {/* <div className="relative w-full bg-gradient-to-r from-[#3c7165] to-[#031637] overflow-hidden transition-all duration-300" ref={firstNavRef}>
                     <div className="container flex items-center flex-col md:flex-row justify-between py-3.5">
                         <div className="relative flex items-center gap-x-2.5">
                             {
@@ -118,24 +126,28 @@ export default function Navbar() {
                             <NavAuthSide/>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <nav aria-label="Global" className="flex items-center justify-between container relative">
-                    <div className="flex lg:flex-1"
-                    >
-                        <SiteLogo/>
-                    </div>
-                    <div className="hidden lg:flex lg:gap-x-4 border-b" ref={navLinksParentRef}>
+                    {/* <div className="hidden lg:flex lg:gap-x-4 border-b" ref={navLinksParentRef}>
                         {
                             navList.map((item , index) => <CustomLink  pathname={pathname} key={index} href={item.href} label={item.label} className={`relative py-1 px-2`} translationPage={"home"}/>)
                         }
                         <CategoriesList/>
-                        {/* <button
-                        onClick={() => {
-                            signInAsGuest()
-                        }}
-                        >Make Me a guest</button>*/}
+                    </div> */}
+                    <div className="relative flex justify-center items-center gap-1.5 cursor-pointer group" onClick={handleShowMobileNav}>
+                        <IoListOutline className="text-2xl light-text"/>
+                        <span className="group-hover:-translate-x-2 group-hover:opacity-0 transition-all duration-300"><HandleTranslate word={"Menu"} page={"global"}/></span>
                     </div>
-                    <BsListNested className="cursor-pointer text-4xl light-text lg:hidden" onClick={handleShowMobileNav}/>
+                    <div className="flex"
+                    >
+                        <SiteLogo/>
+                    </div>
+                    <div className="flex gap-x-2.5">
+                        <LangToggeler/>
+                        <ToggelerDarkMode/>
+                        <NavAuthSide/>
+                    </div>
+                    {/* <BsListNested className="cursor-pointer text-4xl light-text lg:hidden" onClick={handleShowMobileNav}/> */}
                 </nav>
                 <MobileNavList active={activeMobileNav} navList={navList} closeMobileNav={handleCloseMobileNav}/>
             </header>

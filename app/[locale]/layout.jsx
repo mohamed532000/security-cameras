@@ -1,19 +1,16 @@
 import "../globals.css";
 import { Geist, Geist_Mono} from "next/font/google";
-import Navbar from "@/components/Navbar";
 import AppThemeProvider from "@/components/theme/ThemeProvider";
+import Navbar from "@/components/Navbar";
 import { NextIntlClientProvider , hasLocale } from "next-intl";
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { getTranslations } from "next-intl/server";
 import Footer from "@/components/ui/Footer";
-import AboveFooter from "@/components/ui/AboveFooter";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/context/AuthProvider";
 import ReactQueryContext from "@/context/ReactQueryContext";
 import SmootherProvider from "@/context/SmootherProvider";
-import axios from "axios";
-import GenerateUUID from "@/helper/GenerateUUID";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

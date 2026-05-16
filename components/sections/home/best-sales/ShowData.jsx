@@ -32,7 +32,7 @@ function BestSaleSection({items}) {
       containerClassName={"best-sale-container"}
       sectionRef={sectionRef}
       >
-        {items?.length >= 1 && 
+        {items?.length >= 1 &&
         <CustomSwiperModule
           className='relative mt-4'
           slidesPerView={1}

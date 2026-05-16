@@ -1,12 +1,12 @@
-import React from 'react'
-import ShopContent from '../ShopContent';
+// import React from 'react'
+// import ShopContent from '../ShopContent';
 
-async function page({params}) {
-  return (
-    <>
-      <ShopContent/>
-    </>
-  )
-}
+// async function page({params}) {
+//   return (
+//     <>
+//       <ShopContent/>
+//     </>
+//   )
+// }
 
-export default page
+// export default page

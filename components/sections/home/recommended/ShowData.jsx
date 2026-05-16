@@ -41,6 +41,12 @@ function  ShowData({items}) {
     })
   }, { scope: containerRef })
 
+
+  const data = [
+    
+  ]
+
+
   return (
     <Section 
     className={"swiper-section recommended-section"} 
@@ -72,6 +78,7 @@ function  ShowData({items}) {
         breakpoints={breakpoints}
         spaceBetween={20}
         pagination = {false}
+        autoplay={true}
         children={items?.map((item , index) => {
           return (
             <SwiperSlide className='!flex justify-center items-center my-7'>

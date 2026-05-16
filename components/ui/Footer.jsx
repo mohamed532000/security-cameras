@@ -92,15 +92,15 @@ async function Footer({locale}) {
                 >
                     <Link href={"#"} className='relative flex items-center gap-x-1.5 opacity-70 transition-all duration-300 hover:opacity-100'>
                         <CiLocationOn/>
-                        <span>{globalT("Egypt")} - {globalT("Giza")} - {globalT("El-Haram")}</span>
+                        <span>{globalT("Saudi Arabia")} - {globalT("Dammam")} - {globalT("AL Dabab")}</span>
                     </Link>
                     <Link href={"#"} className='relative flex items-center gap-x-1.5 opacity-70 transition-all duration-300 hover:opacity-100'>
                         <FaPhone/>
-                        <span>01124485518</span>
+                        <span>0594041997</span>
                     </Link>
-                    <Link href={`mailto:Sochialyzer@gmail.com`} className='relative flex items-center gap-x-1.5 opacity-70 transition-all duration-300 hover:opacity-100'>
+                    <Link href={`mailto:abotourky@gmail.com`} className='relative flex items-center gap-x-1.5 opacity-70 transition-all duration-300 hover:opacity-100'>
                         <MdAlternateEmail/>
-                        <span>Sochialyzer@gmail.com</span>
+                        <span>abotourky@gmail.com</span>
                     </Link>
                     <div className='fowllow-us relative flex flex-col gap-y-1.5 pt-2 mt-2'>
                         <h2 className='font-bold'>{globalT("Follow us")}</h2>

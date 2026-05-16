@@ -32,7 +32,7 @@ async function AboveFooter() {
                     <p className="text-xs">
                         {t("We're here for you anytime")} 
                         <Link href={`mailto:${"ezat6518@gmail.com"}`} className='text-active-text-primary mx-1 underline transition-all duration-300'>
-                            ezat6518@gmail.com
+                            abotourky@gmail.com
                         </Link>
                     </p>
                 </div>

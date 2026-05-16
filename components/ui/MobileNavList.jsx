@@ -55,14 +55,15 @@ export const MobileNavList = ({active , navList = [] , closeMobileNav}) => {
         active ? ScrollSmoother.get().paused(true) : ScrollSmoother.get().paused(false)
     }, [active])
   return (
-    <div ref={mobileListRef} className={`fixed inset-y-0 ${active ? "w-full md:w-[200px]" : "w-0"} h-screen bg-background/70 backdrop-blur-md transition-all duration-300 flex flex-col overflow-hidden justify-center items-center lg:hidden`}>
+    // <div ref={mobileListRef} className={`fixed inset-y-0 ${active ? "w-full md:w-[200px]" : "w-0"} h-screen bg-background/70 backdrop-blur-md transition-all duration-300 flex flex-col overflow-hidden justify-center items-center lg:hidden`}>
+    <div ref={mobileListRef} className={`fixed inset-y-0 ${active ? "w-full md:w-[400px]" : "w-0"} h-screen bg-background/70 backdrop-blur-md transition-all duration-300 flex flex-col overflow-hidden justify-center items-center`}>
         <div className='w-full absolute inset-y-0 close-nav-list-icon'>
             <IoCloseOutline className='cursor-pointer text-2xl m-2 dark:text-stone-100' onClick={closeMobileNav}/>
         </div>
         <ul className='flex flex-col justify-center items-center h-fit gap-2'>
-            <li>
+            {/* <li>
                 <UserDropdown sessionData={sessionData}/>
-            </li>
+            </li> */}
             {
                 navList.map((item , index) => (
                     <MobileNavLink key={index} item={item} index={index} className={"mobile-nav-link"}/>
@@ -70,11 +71,11 @@ export const MobileNavList = ({active , navList = [] , closeMobileNav}) => {
             }
             <li className={"mobile-nav-link"}><CategoriesList/></li>
         </ul>
-        <div className='absolute bottom-0 flex justify-center items-center gap-x-2.5  py-4 w-full'>
+        {/* <div className='absolute bottom-0 flex justify-center items-center gap-x-2.5  py-4 w-full'>
             <span className='span-border absolute inset-y-0 h-[.5px] bg-slate-500 dark:bg-stone-100'></span>
             <ToggelerDarkMode className={"list-footer-icon"} toggeleThemRef={toggeleThemRef}/>
             <LangToggeler className={"list-footer-icon"}/>
-        </div>
+        </div> */}
     </div>
   )
 }

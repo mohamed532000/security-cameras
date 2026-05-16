@@ -27,14 +27,14 @@ export const AuthProvider = ({children}) => {
             setGetSessionLoading(false);
         }
     }
-    useEffect(() => {
-        getSession();
-        const {data:authListener} = supabase.auth.onAuthStateChange((_e , session) => {
-            setSession(session)
+    // useEffect(() => {
+    //     getSession();
+    //     const {data:authListener} = supabase.auth.onAuthStateChange((_e , session) => {
+    //         setSession(session)
 
-        });
-        return () => {authListener.subscription.unsubscribe()}
-    },[])
+    //     });
+    //     return () => {authListener.subscription.unsubscribe()}
+    // },[])
     return (
         <authContext.Provider value={
             {
